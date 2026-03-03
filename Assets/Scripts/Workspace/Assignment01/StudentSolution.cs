@@ -148,13 +148,14 @@ namespace Assignment01
 
         public void AS10_FindSummationFromZeroToNUsingWhileLoop(int n)
         {
-            int sum = 0, i = 0;
+            int sum = 0;
+            int i = 0;
             while (i <= n)
             {
                 sum += i;
                 i++;
             }
-            Debug.Log($"ผลรวมของ n จาก 0 ถึง {n} คือ {sum}");
+            Debug.Log($"¼ÅÃÇÁ¢Í§ n ¨Ò¡ 0 ¶Ö§ {n} ¤×Í {sum}");
         }
         public void AS11_SpawnEnemies(int[] enemyHPs, GameObject enemyPrefab)
         {
