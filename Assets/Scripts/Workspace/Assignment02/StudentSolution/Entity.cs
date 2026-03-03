@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Assignment02.StudentSolution
 {
-    public class Entity
+    public class Entity 
     {
         public string name;
         private Vector3 position;
@@ -10,14 +10,12 @@ namespace Assignment02.StudentSolution
 
         public virtual void Update()
         {
+            
         }
-
-        protected virtual void TakeDamage(int damage)
+        protected virtual void TakeDamage(int damage) { health -= damage; }
+        private void Move()
         {
-        }
-
-        private void Move(Vector3 direction)
-        {
+                
         }
     }
 }
