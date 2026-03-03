@@ -122,11 +122,10 @@ namespace Assignment01
         public void AS07_HealTargetAtIndex(int[] heroHPs, int heal, int targetIndex)
         {
             heroHPs[0] += heal;
-            heroHPs[heroHPs.Length - 1] += heal;
-            heroHPs[targetIndex] += heal;
-
             Debug.Log($"FirstHero hp :{heroHPs[0]}");
+            heroHPs[heroHPs.Length - 1] += heal;
             Debug.Log($"LastHero hp :{heroHPs[heroHPs.Length - 1]}");
+            heroHPs[targetIndex] += heal;
             Debug.Log($"TargetHero {targetIndex} hp :{heroHPs[targetIndex]}");
         }
 
