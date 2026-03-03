@@ -72,7 +72,6 @@ namespace Assignment03
         {
             
             Hashtable hashtable = new Hashtable();
-            //Key Value
             hashtable.Add(1,"Apple");
             hashtable.Add(2,"Banana");
             hashtable.Add("bad-fruit","Rotten Tomato");
@@ -192,7 +191,6 @@ namespace Assignment03
                 return;
             }
 
-            // Start from the Last node and move backwards using .Previous
             LinkedListNode<int> current = list.Last;
             while (current != null)
             {
@@ -209,11 +207,9 @@ namespace Assignment03
                 return;
             }
 
-            // Using two pointers (Slow and Fast) to find the middle
             LinkedListNode<string> slow = list.First;
             LinkedListNode<string> fast = list.First;
 
-            // Fast moves two steps, Slow moves one. When Fast hits the end, Slow is at middle.
             while (fast != null && fast.Next != null)
             {
                 slow = slow.Next;
@@ -225,7 +221,6 @@ namespace Assignment03
 
         public void AS06_MergeDictionaries(Dictionary<string, int> dict1, Dictionary<string, int> dict2)
         {
-            // Combine both dictionaries into a new one (or modify dict1)
             Dictionary<string, int> result = new Dictionary<string, int>(dict1);
 
             foreach (var pair in dict2)
@@ -287,7 +282,6 @@ namespace Assignment03
                     maxCount = counts[n];
                     topNum = n;
                 }
-                // Tie-breaker: The test cases expect the first one encountered if counts are equal
             }
 
             Debug.Log($"{topNum} count: {maxCount}");

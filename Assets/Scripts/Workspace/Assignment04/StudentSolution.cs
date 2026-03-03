@@ -32,22 +32,84 @@ namespace Assignment04
 
         public void AS01_SelectionSortDescending(int[] numbers)
         {
-            throw new System.NotImplementedException();
+            int n = numbers.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                int maxIndex = i;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (numbers[j] > numbers[maxIndex])
+                    {
+                        maxIndex = j;
+                    }
+                }
+                int temp = numbers[maxIndex];
+                numbers[maxIndex] = numbers[i];
+                numbers[i] = temp;
+            }
+
+            foreach (int num in numbers)
+            {
+                Debug.Log(num.ToString());
+            }
         }
 
         public void AS02_BubbleSortDescending(int[] numbers)
         {
-            throw new System.NotImplementedException();
+            int n = numbers.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (numbers[j] < numbers[j + 1])
+                    {
+                        int temp = numbers[j];
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = temp;
+                    }
+                }
+            }
+
+            foreach (int num in numbers)
+            {
+                Debug.Log(num.ToString());
+            }
         }
 
         public void AS03_InsertionSortDescending(int[] numbers)
         {
-            throw new System.NotImplementedException();
+            int n = numbers.Length;
+            for (int i = 1; i < n; ++i)
+            {
+                int key = numbers[i];
+                int j = i - 1;
+                while (j >= 0 && numbers[j] < key)
+                {
+                    numbers[j + 1] = numbers[j];
+                    j = j - 1;
+                }
+                numbers[j + 1] = key;
+            }
+
+            foreach (int num in numbers)
+            {
+                Debug.Log(num.ToString());
+            }
         }
 
         public void AS04_FindTheSecondLargestNumber(int[] numbers)
         {
-            throw new System.NotImplementedException();
+            if (numbers == null || numbers.Length < 2) return;
+            var sortedDistinct = numbers.Distinct().OrderByDescending(n => n).ToList();
+
+            if (sortedDistinct.Count >= 2)
+            {
+                Debug.Log(sortedDistinct[1].ToString());
+            }
+            else
+            {
+                Debug.Log(sortedDistinct[0].ToString());
+            }
         }
 
         #endregion

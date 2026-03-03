@@ -57,17 +57,76 @@ namespace Assignment06
 
         public void AS01_FindFirstAndLastElementOfArray(int[] array, int target)
         {
-            throw new NotImplementedException();
+            int first = -1;
+            int last = -1;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == target)
+                {
+                    if (first == -1)
+                    {
+                        first = i;
+                    }
+                    last = i;
+                }
+            }
+
+            if (first != -1)
+            {
+                Debug.Log(first);
+                Debug.Log(last);
+            }
+            else
+            {
+                Debug.Log(-1);
+            }
         }
 
         public void AS02_FindMaxLessThan(int[] array, int target)
         {
-            throw new NotImplementedException();
+            int maxResult = int.MinValue;
+            bool found = false;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < target)
+                {
+                    if (array[i] > maxResult)
+                    {
+                        maxResult = array[i];
+                    }
+                    found = true;
+                }
+            }
+
+            if (found)
+            {
+                Debug.Log(maxResult);
+            }
+            else
+            {
+                Debug.Log(-1);
+            }
         }
 
         public void AS03_FindRange(int[] array, int min, int max)
         {
-            throw new NotImplementedException();
+            bool found = false;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] >= min && array[i] <= max)
+                {
+                    Debug.Log(array[i]);
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                Debug.Log("Empty");
+            }
         }
 
         #endregion
